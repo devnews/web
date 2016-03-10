@@ -1,2 +1,3 @@
-# web
-Developer news aggregator.
+# [devne.ws](https://devne.ws/)
+
+Coming soon.
