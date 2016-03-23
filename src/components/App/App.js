@@ -15,7 +15,7 @@ class App extends React.Component {
                 <h1 className={styles.heading}>
                     Developer news aggregator.
                 </h1>
-                <p style={{textAlign: 'center'}}>Still settings things up...</p>
+                <p style={{textAlign: 'center'}}>Still setting things up...</p>
             </div>
         )
     }
