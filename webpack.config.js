@@ -3,6 +3,7 @@
 const webpack = require('webpack');
 const fs = require('fs');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const postcssImport = require('postcss-import');
 const cssnext = require('postcss-cssnext');
 
@@ -18,7 +19,11 @@ const config = {
         new HtmlWebpackPlugin({
             template: './src/index.html',
             inject: 'body',
+            filename: 'index.html',
         }),
+        new CopyWebpackPlugin([
+            {from: './src/CNAME'},
+        ]),
     ],
     module: {
         loaders: [
