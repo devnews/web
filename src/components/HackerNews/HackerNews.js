@@ -2,6 +2,8 @@ import React from 'react';
 import request from 'superagent';
 import moment from 'moment';
 import RaisedButton from 'material-ui/lib/raised-button';
+import CircularProgress from 'material-ui/lib/circular-progress';
+import Colors from 'material-ui/lib/styles/colors';
 import HackerNewsStory from './HackerNewsStory';
 
 class HackerNews extends React.Component {
@@ -11,6 +13,7 @@ class HackerNews extends React.Component {
 
         this.state = {
             data: [],
+            loaded: false,
         };
 
         this.baseUrl = 'https://hacker-news.firebaseio.com/v0'
@@ -38,6 +41,7 @@ class HackerNews extends React.Component {
                         });
                         this.setState({
                             data: data,
+                            loaded: true,
                         });
                     });
                 }
@@ -49,6 +53,12 @@ class HackerNews extends React.Component {
     }
 
     render () {
+        if (!this.state.loaded) {
+            return (
+                <CircularProgress color={Colors.indigo900} />
+            )
+        }
+
         if (!this.state.data.length) {
             return (
                 <div>Oops, we were unable to load the stories :(</div>
