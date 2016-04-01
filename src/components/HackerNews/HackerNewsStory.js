@@ -6,7 +6,10 @@ const HackerNewsStory = (props) => {
     return (
         <div className={styles.container}>
             <h2 className={styles.heading}>
-                <a href={props.story.url} target="_blank">
+                <a
+                    href={props.story.url || 'https://news.ycombinator.com/item?id='+props.story.id}
+                    target="_blank"
+                >
                     {props.story.title}
                 </a>
             </h2>
