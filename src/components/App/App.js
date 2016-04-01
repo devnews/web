@@ -1,24 +1,31 @@
 import React from 'react';
+import ThemeManager from 'material-ui/lib/styles/theme-manager';
+import Theme from '../../../config/theme';
 import styles from './App.css';
-import colors from 'material-ui/lib/styles/colors';
-import AppBar from 'material-ui/lib/app-bar';
+import Header from '../Header/Header';
+import News from '../News/News';
 
 class App extends React.Component {
+
+    getChildContext () {
+        return {
+            muiTheme: ThemeManager.getMuiTheme(Theme),
+        };
+    }
+
     render () {
         return (
             <div>
-                <AppBar
-                    title="devnews"
-                    showMenuIconButton={false}
-                    style={{backgroundColor: colors.indigo500}}
-                />
-                <h1 className={styles.heading}>
-                    Developer news aggregator.
-                </h1>
-                <p style={{textAlign: 'center'}}>Still setting things up...</p>
+                <Header />
+                <News />
             </div>
         )
     }
+
+};
+
+App.childContextTypes = {
+    muiTheme: React.PropTypes.object,
 };
 
 export default App;

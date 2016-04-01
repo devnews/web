@@ -1,0 +1,9 @@
+.logo {
+    padding: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: .03em;
+    color: #bdbdbd;
+    cursor: default;
+}
