@@ -1,7 +1,16 @@
-.container {
+.heading {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.tabsContainer {
     padding: 0;
 }
 
 .content {
     padding: 30px;
+}
+
+.storiesContainer {
+    margin-top: 15px;
 }
