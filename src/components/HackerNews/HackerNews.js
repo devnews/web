@@ -1,7 +1,6 @@
 import React from 'react';
 import request from 'superagent';
 import moment from 'moment';
-import RaisedButton from 'material-ui/lib/raised-button';
 import CircularProgress from 'material-ui/lib/circular-progress';
 import Colors from 'material-ui/lib/styles/colors';
 import HackerNewsStory from './HackerNewsStory';
@@ -66,7 +65,7 @@ class HackerNews extends React.Component {
         }
 
         return (
-            <div>
+            <div className={this.props.className}>
                 {
                     this.state.data.map(story => {
                         return (
@@ -75,11 +74,9 @@ class HackerNews extends React.Component {
                     })
                 }
 
-                <RaisedButton
-                    label="More Stories"
-                    linkButton={true}
-                    href="https://news.ycombinator.com/news?p=2"
-                />
+                <a href="https://news.ycombinator.com/news?p=2">
+                    Go to Hacker News (page 2)
+                </a>
             </div>
         )
     }
