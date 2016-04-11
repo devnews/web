@@ -1,5 +1,4 @@
 import React from 'react';
-import request from 'superagent';
 import CircularProgress from 'material-ui/lib/circular-progress';
 import Colors from 'material-ui/lib/styles/colors';
 import GitHubRepo from './GitHubRepo';
@@ -18,11 +17,10 @@ class GitHub extends React.Component {
     }
 
     componentDidMount () {
-        this.apiRequest = request
+        this.apiRequest = this.props.request
             .get(this.baseUrl)
             .end((error, response) => {
                 let data = [];
-                console.log(response.body);
                 for (let repo of response.body.data.repositories) {
                     data.push({
                         url: 'https://github.com'+repo.url,

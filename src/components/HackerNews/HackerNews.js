@@ -1,5 +1,4 @@
 import React from 'react';
-import request from 'superagent';
 import moment from 'moment';
 import CircularProgress from 'material-ui/lib/circular-progress';
 import Colors from 'material-ui/lib/styles/colors';
@@ -19,7 +18,7 @@ class HackerNews extends React.Component {
     }
 
     componentDidMount () {
-        this.apiRequest = request
+        this.apiRequest = this.props.request
             .get(this.baseUrl+'/topstories.json')
             .end((error, response) => {
                 let stories = response.body.slice(0, 30); // grab 30 items
@@ -28,7 +27,7 @@ class HackerNews extends React.Component {
                 for (let storyId of stories) {
                     const apiUrl = this.baseUrl+'/item/'+storyId+'.json';
 
-                    request.get(apiUrl).end((error, response) => {
+                    this.props.request.get(apiUrl).end((error, response) => {
                         data.push({
                             id: response.body.id,
                             title: response.body.title,
