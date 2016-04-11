@@ -29,7 +29,8 @@
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
     "react-tap-event-plugin": "^0.2.2",
-    "superagent": "^1.8.3"
+    "superagent": "^1.8.3",
+    "superagent-cache": "^1.4.1"
   },
   "devDependencies": {
     "babel-core": "^6.7.2",
