@@ -6,6 +6,7 @@ import HackerNewsIcon from '../Icons/HackerNews';
 import GitHubIcon from '../Icons/GitHub';
 import ProductHuntIcon from '../Icons/ProductHunt';
 import HackerNews from '../HackerNews/HackerNews';
+import GitHub from '../GitHub/GitHub';
 
 const News = (props) => {
     return (
@@ -20,7 +21,10 @@ const News = (props) => {
                 <HackerNews className={styles.storiesContainer} />
             </Tab>
             <Tab icon={<GitHubIcon title="GitHub Trending" />}>
-                GitHub trending repositories here...
+                <h1 className={styles.heading}>
+                    GitHub Trending
+                </h1>
+                <GitHub className={styles.storiesContainer} />
             </Tab>
             <Tab icon={<ProductHuntIcon title="Product Hunt" />}>
                 Product Hunt tech here...

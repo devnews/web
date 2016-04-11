@@ -1,0 +1,22 @@
+.container {
+    margin-bottom: 30px;
+}
+
+.heading {
+    margin: 0;
+    line-height: 1.6em;
+}
+
+.description {
+    margin: 15px 0 0 0;
+}
+
+.footer {
+    padding-top: 15px;
+    line-height: 1.4em;
+}
+
+.footerItem {
+    display: inline-block;
+    margin-right: 15px;
+}
