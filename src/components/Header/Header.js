@@ -15,7 +15,7 @@ class Header extends React.Component {
         };
     }
 
-    handleTouchTap (event) {
+    handleClick (event) {
         this.setState({
             aboutOpen: true,
             anchorEl: event.currentTarget,
@@ -37,7 +37,7 @@ class Header extends React.Component {
                 <div className={styles.aboutBtnContainer}>
                     <IconButton
                         tooltip="About"
-                        onTouchTap={this.handleTouchTap.bind(this)}
+                        onClick={this.handleClick.bind(this)}
                     >
                         <InfoOutlineIcon />
                     </IconButton>
@@ -52,7 +52,7 @@ class Header extends React.Component {
                     <div className={styles.aboutContainer}>
                         <h1 className={styles.aboutHeading}>About</h1>
                         <p className={styles.aboutText}>Devnews aggregates top news stories from Hacker News, trending repositories from GitHub, and top tech from Product Hunt.</p>
-                        <p className={styles.aboutText}>This project is created by the ninjas at <a href="https://ninjality.com/">Ninjality</a> and is <a href="https://github.com/devnews/web">open sourced on GitHub</a>.</p>
+                        <p className={styles.aboutText}>This project was created by the ninjas at <a href="https://ninjality.com/">Ninjality</a> and is <a href="https://github.com/devnews/web">open sourced on GitHub</a>.</p>
                     </div>
                 </Popover>
             </div>

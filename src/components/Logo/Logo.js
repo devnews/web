@@ -1,6 +1,6 @@
 import React from 'react';
 import SVGInline from 'react-svg-inline';
-import svg from '../../static/svg/logo.svg';
+import svg from '../../static/logo.svg';
 
 const Logo = (props) => {
     return (
