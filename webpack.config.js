@@ -59,7 +59,7 @@ const config = {
                 loader: 'babel-loader',
                 exclude: /node_modules/,
                 query: {
-                    presets: ['es2015', 'react']
+                    presets: ['es2015', 'react'],
                 },
             },
             {
@@ -68,7 +68,11 @@ const config = {
             },
             {
                 test: /\.json$/,
-                loader: 'json'
+                loader: 'json',
+            },
+            {
+                test: /\.svg$/,
+                loader: 'raw-loader',
             },
         ]
     },

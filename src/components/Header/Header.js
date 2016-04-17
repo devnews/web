@@ -2,6 +2,7 @@ import React from 'react';
 import Popover from 'material-ui/lib/popover/popover';
 import IconButton from 'material-ui/lib/icon-button';
 import InfoOutlineIcon from 'material-ui/lib/svg-icons/action/info-outline';
+import Logo from '../Logo/Logo';
 import styles from './Header.css';
 
 class Header extends React.Component {
@@ -31,7 +32,7 @@ class Header extends React.Component {
         return (
             <div>
                 <div className={styles.logo}>
-                    devnews
+                    <Logo />
                 </div>
                 <div className={styles.aboutBtnContainer}>
                     <IconButton
