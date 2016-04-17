@@ -4,7 +4,6 @@
   "description": "Developer news aggregator.",
   "main": "index.js",
   "scripts": {
-    "prestart": "open http://localhost:3000/",
     "start": "webpack-dev-server --port 3000 --hot --inline --progress --colors",
     "build": "webpack",
     "prod": "NODE_ENV=production webpack -p",
@@ -41,6 +40,7 @@
     "css-loader": "^0.23.1",
     "html-webpack-plugin": "^2.12.0",
     "json-loader": "^0.5.4",
+    "open-browser-webpack-plugin": "0.0.2",
     "postcss-cssnext": "^2.5.1",
     "postcss-import": "^8.0.2",
     "postcss-loader": "^0.8.2",
