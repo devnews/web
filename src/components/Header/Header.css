@@ -1,9 +1,29 @@
 .logo {
     padding: 15px;
-    font-size: 1.2rem;
-    font-weight: bold;
+    font-size: 1.4rem;
+    font-family: 'Oleo Script Swash Caps', cursive;
     text-align: center;
     letter-spacing: .03em;
-    color: #bdbdbd;
+    color: var(--brandPrimary);
     cursor: default;
+}
+
+.aboutBtnContainer {
+    position: absolute;
+    top: 7px;
+    left: 7px;
+}
+
+.aboutContainer {
+    padding: 30px;
+}
+
+.aboutHeading {
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.aboutText {
+    margin: 15px 0 0 0;
+    line-height: 1.5em;
 }

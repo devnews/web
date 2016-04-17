@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './GitHubRepo.css';
+import styles from '../NewsList/NewsItem.css';
 
 const GitHubRepo = (props) => {
 
@@ -15,11 +15,20 @@ const GitHubRepo = (props) => {
             </h2>
             <p className={styles.description}>{props.repo.description}</p>
             <footer className={styles.footer}>
+                {(() => {
+                    if (props.repo.language) {
+                        return (
+                            <span className={styles.footerItem}>
+                                <span className={styles.footerItem}>
+                                    {props.repo.language}
+                                </span>
+                            </span>
+                        )
+                    }
+                })()}
                 <span className={styles.footerItem}>
                     <span className={styles.footerItem}>
-                        {props.repo.language}
-                        &nbsp; • &nbsp;
-                        {props.repo.stars} stars today
+                        {props.repo.stars} Stars
                     </span>
                 </span>
             </footer>

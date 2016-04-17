@@ -2,18 +2,18 @@
     margin-bottom: 30px;
 }
 
+.container a:visited {
+    color: #555;
+}
+
 .heading {
     margin: 0;
     line-height: 1.6em;
 }
 
-.description {
-    margin: 15px 0 0 0;
-}
-
 .footer {
     padding-top: 15px;
-    line-height: 1.4em;
+    line-height: 1.5em;
 }
 
 .footerItem {

@@ -1,4 +1,4 @@
-@import url('//fonts.googleapis.com/css?family=Roboto:400,300,500');
+@import url('//fonts.googleapis.com/css?family=Roboto:400,300,500|Oleo+Script+Swash+Caps');
 @import 'normalize.css';
 
 :root {
@@ -26,9 +26,5 @@ a:not([type="button"]) {
         border-color: transparent;
         text-decoration: none;
         transition: all .2s ease;
-    }
-
-    &:visited {
-        color: #555;
     }
 }

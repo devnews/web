@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './HackerNewsStory.css';
+import styles from '../NewsList/NewsItem.css';
 
 const HackerNewsStory = (props) => {
 
