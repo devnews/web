@@ -4,8 +4,10 @@
 
 ## Tech Stack
 
-This is a static site hosted on [Surge](https://surge.sh/).
+Built with these awesome services and tools.
 
+- [Surge](https://surge.sh/)
+- [WrapAPI](https://wrapapi.com/)
 - [React](https://facebook.github.io/react/)
 - [Webpack](http://webpack.github.io/) and [Babel](https://babeljs.io/)
 - [PostCSS](http://postcss.org/) and [cssnext](http://cssnext.io/)
