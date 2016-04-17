@@ -1,7 +1,18 @@
 import React from 'react';
+import Autolinker from 'autolinker';
 import styles from '../NewsList/NewsItem.css';
 
 const GitHubRepo = (props) => {
+
+    let getDescription = () => {
+        return {
+            __html: Autolinker.link(props.repo.description, {
+                email: false,
+                phone: false,
+                twitter: false,
+            }),
+        };
+    };
 
     return (
         <div className={styles.container}>
@@ -13,7 +24,7 @@ const GitHubRepo = (props) => {
                     {props.repo.user}/{props.repo.name}
                 </a>
             </h2>
-            <p className={styles.description}>{props.repo.description}</p>
+            <p className={styles.description} dangerouslySetInnerHTML={getDescription()} />
             <footer className={styles.footer}>
                 {(() => {
                     if (props.repo.language) {
