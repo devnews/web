@@ -7,7 +7,9 @@ const CopyPlugin = require('copy-webpack-plugin');
 const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 const postcssImport = require('postcss-import');
 const cssnext = require('postcss-cssnext');
+const fontMagician = require('postcss-font-magician');
 
+const meta = JSON.parse(fs.readFileSync('./config/app.json', 'utf8'));
 const colors = JSON.parse(fs.readFileSync('./config/colors.json', 'utf8'));
 
 const IS_PROD = process.env.NODE_ENV === 'production';
@@ -15,8 +17,7 @@ const IS_DEV = !IS_PROD;
 
 let webpackPlugins = [
     new HtmlPlugin({
-        template: './src/index.html',
-        inject: 'body',
+        template: './src/index.ejs',
         filename: 'index.html',
         minify: {
             collapseBooleanAttributes: true,
@@ -26,6 +27,10 @@ let webpackPlugins = [
             removeEmptyAttributes: true,
             removeRedundantAttributes: true,
         },
+        inject: false,
+        meta: meta,
+        colors: colors,
+        baseUrl: IS_DEV ? 'http://localhost:3000' : 'https://devne.ws',
     }),
     new CopyPlugin([
         {from: './src/static', to: './'},
@@ -49,30 +54,33 @@ const config = {
     entry: './src/index.js',
     output: {
         path: './build',
-        filename: 'bundle.js',
+        filename: IS_DEV ? 'bundle.js' : '[hash].bundle.js',
     },
     plugins: webpackPlugins,
     module: {
         loaders: [
             {
-                test: /.js?$/,
-                loader: 'babel-loader',
-                exclude: /node_modules/,
+                test: /.js$/,
+                loader: 'babel',
+                exclude: [/node_modules/, /.ejs$/],
                 query: {
                     presets: ['es2015', 'react'],
                 },
             },
             {
                 test: /\.css$/,
-                loader: "style-loader!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader",
+                loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader',
+                exclude: [/node_modules/],
             },
             {
                 test: /\.json$/,
                 loader: 'json',
+                exclude: [/node_modules/],
             },
             {
                 test: /\.svg$/,
                 loader: 'raw-loader',
+                exclude: [/node_modules/],
             },
         ]
     },
@@ -86,6 +94,7 @@ const config = {
                     },
                 },
             }),
+            fontMagician(),
         ];
     },
     devtool: IS_DEV ? '#inline-source-map' : undefined,
