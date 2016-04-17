@@ -33,8 +33,7 @@ const config = {
             },
         }),
         new CopyWebpackPlugin([
-            {from: './src/CNAME'},
-            {from: './src/favicons', to: './favicons'},
+            {from: './src/static', to: './'},
         ]),
         new webpack.DefinePlugin({
             'process.env': {
