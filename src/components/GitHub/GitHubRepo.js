@@ -1,12 +1,14 @@
 import React from 'react';
 import Autolinker from 'autolinker';
+import escape from 'html-escape';
 import styles from '../NewsList/NewsItem.css';
 
 const GitHubRepo = (props) => {
 
     let getDescription = () => {
+        const safeDescription = escape(props.repo.description);
         return {
-            __html: Autolinker.link(props.repo.description, {
+            __html: Autolinker.link(safeDescription, {
                 email: false,
                 phone: false,
                 twitter: false,
