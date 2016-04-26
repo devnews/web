@@ -1,5 +1,3 @@
-'use strict';
-
 const webpack = require('webpack');
 const fs = require('fs');
 const HtmlPlugin = require('html-webpack-plugin');
@@ -12,14 +10,14 @@ const fontMagician = require('postcss-font-magician');
 const meta = JSON.parse(fs.readFileSync('./config/app.json', 'utf8'));
 const colors = JSON.parse(fs.readFileSync('./config/colors.json', 'utf8'));
 
-const IS_PROD = process.env.NODE_ENV === 'production';
-const IS_DEV = !IS_PROD;
+const PROD_ENV = process.env.NODE_ENV === 'production';
+const DEV_ENV = !PROD_ENV;
 
 const config = {
     entry: './src/index.js',
     output: {
         path: './build',
-        filename: IS_DEV ? 'bundle.js' : '[hash].bundle.js',
+        filename: DEV_ENV ? 'dev.bundle.js' : '[hash].bundle.js',
     },
     plugins: [
         new HtmlPlugin({
@@ -36,14 +34,14 @@ const config = {
             inject: false,
             meta: meta,
             colors: colors,
-            baseUrl: IS_DEV ? 'http://localhost:3000' : 'https://devne.ws',
+            baseUrl: DEV_ENV ? 'http://localhost:3000' : 'https://devne.ws',
         }),
         new CopyPlugin([
             {from: './src/static', to: './'},
         ]),
         new webpack.DefinePlugin({
             'process.env': {
-                'NODE_ENV': IS_DEV ? JSON.stringify('development') : JSON.stringify('production'),
+                'NODE_ENV': DEV_ENV ? JSON.stringify('development') : JSON.stringify('production'),
             }
         }),
     ],
@@ -69,7 +67,7 @@ const config = {
             },
             {
                 test: /\.svg$/,
-                loader: 'raw-loader',
+                loader: 'raw',
                 exclude: [/node_modules/],
             },
         ]
@@ -87,15 +85,15 @@ const config = {
             fontMagician(),
         ];
     },
-    devtool: IS_DEV ? '#inline-source-map' : undefined,
 };
 
-if (IS_DEV) {
+if (DEV_ENV) {
     config.plugins.push(
         new OpenBrowserPlugin({
             url: 'http://localhost:3000',
         })
     );
+    config.devtool = '#inline-source-map';
 }
 
 module.exports = config;
