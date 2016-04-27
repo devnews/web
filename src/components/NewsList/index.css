@@ -10,12 +10,16 @@
     margin: 0;
     line-height: 1.6em;
     word-break: break-all;
+    word-break: break-word;
+    hyphens: auto;
 }
 
 .description {
     margin-top: 15px;
     margin-bottom: 0;
     word-break: break-all;
+    word-break: break-word;
+    hyphens: auto;
 }
 
 .footer {
