@@ -13,6 +13,8 @@ const colors = JSON.parse(fs.readFileSync('./config/colors.json', 'utf8'));
 const PROD_ENV = process.env.NODE_ENV === 'production';
 const DEV_ENV = !PROD_ENV;
 
+const cssModulesNameFormat = DEV_ENV ? '[path][name]__[local]___[hash:base64:5]' : '[hash:base64]';
+
 const config = {
     entry: './src/index.js',
     output: {
@@ -52,12 +54,12 @@ const config = {
                 loader: 'babel',
                 exclude: [/node_modules/, /.ejs$/],
                 query: {
-                    presets: ['es2015', 'react'],
+                    presets: DEV_ENV ? ['es2015', 'react', 'react-hmre'] : ['es2015', 'react'],
                 },
             },
             {
                 test: /\.css$/,
-                loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader',
+                loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName='+cssModulesNameFormat+'!postcss-loader',
                 exclude: [/node_modules/],
             },
             {
