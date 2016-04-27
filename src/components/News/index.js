@@ -1,16 +1,16 @@
 import React from 'react';
 import request from 'superagent';
 import requestCache from 'superagent-cache';
-import styles from './News.css';
 import Tabs from 'material-ui/lib/tabs/tabs';
 import Tab from 'material-ui/lib/tabs/tab';
 import HackerNewsIcon from '../Icons/HackerNews';
 import GitHubIcon from '../Icons/GitHub';
 import ProductHuntIcon from '../Icons/ProductHunt';
-import NewsList from '../NewsList/NewsList';
+import NewsList from '../NewsList';
 import HackerNewsData from '../../data/HackerNewsData';
 import GitHubData from '../../data/GitHubData';
 import ProductHuntData from '../../data/ProductHuntData';
+import styles from './index.css';
 
 // Cache Ajax requests
 requestCache(request, {

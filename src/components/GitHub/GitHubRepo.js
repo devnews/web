@@ -1,7 +1,7 @@
 import React from 'react';
 import Autolinker from 'autolinker';
 import escape from 'html-escape';
-import styles from '../NewsList/NewsItem.css';
+import styles from '../NewsList/index.css';
 
 const GitHubRepo = (props) => {
 

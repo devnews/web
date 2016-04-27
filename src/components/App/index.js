@@ -1,9 +1,9 @@
 import React from 'react';
 import ThemeManager from 'material-ui/lib/styles/theme-manager';
 import Theme from '../../../config/theme';
-import styles from './App.css';
-import Header from '../Header/Header';
-import News from '../News/News';
+import styles from './index.css';
+import Header from '../Header';
+import News from '../News';
 
 class App extends React.Component {
 

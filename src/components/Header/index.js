@@ -2,8 +2,8 @@ import React from 'react';
 import Popover from 'material-ui/lib/popover/popover';
 import IconButton from 'material-ui/lib/icon-button';
 import InfoOutlineIcon from 'material-ui/lib/svg-icons/action/info-outline';
-import Logo from '../Logo/Logo';
-import styles from './Header.css';
+import Logo from '../Logo';
+import styles from './index.css';
 
 class Header extends React.Component {
 
