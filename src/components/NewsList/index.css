@@ -9,11 +9,13 @@
 .heading {
     margin: 0;
     line-height: 1.6em;
+    word-break: break-all;
 }
 
 .description {
     margin-top: 15px;
     margin-bottom: 0;
+    word-break: break-all;
 }
 
 .footer {
