@@ -9,6 +9,7 @@ const Logo = (props) => {
             desc={props.desc}
             width={props.width}
             height={props.height}
+            cleanup={['width', 'height']}
         />
     );
 };
@@ -22,7 +23,7 @@ Logo.propTypes = {
 Logo.defaultProps = {
     desc: 'devnews logo',
     width: 'auto',
-    height: '20',
+    height: '20px',
 };
 
 export default Logo;
