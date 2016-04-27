@@ -28,6 +28,7 @@
     "moment": "^2.12.0",
     "normalize.css": "^4.0.0",
     "react": "^15.0.1",
+    "react-back2top": "^0.1.2",
     "react-dom": "^15.0.1",
     "react-tap-event-plugin": "^1.0.0",
     "superagent": "^1.8.3",
