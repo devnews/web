@@ -53,6 +53,7 @@ class Header extends React.Component {
                         <h1 className={styles.aboutHeading}>About</h1>
                         <p className={styles.aboutText}>Devnews aggregates top news stories from Hacker News, trending repositories from GitHub, and top tech from Product Hunt.</p>
                         <p className={styles.aboutText}>This project was created by the ninjas at <a href="https://ninjality.com/">Ninjality</a> and is <a href="https://github.com/devnews/web">open sourced on GitHub</a>.</p>
+                        <p className={styles.aboutText}>Feel free to use our assets when linking to devnews: <a href="/logo.svg">SVG Logo</a>, <a href="/logo.png">PNG Logo</a>, <a href="/icon.svg">SVG Icon</a>, <a href="/icon.png">PNG Icon</a>.</p>
                     </div>
                 </Popover>
             </div>
