@@ -4,9 +4,9 @@
   "description": "Developer news aggregator.",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --port 3000 --hot --inline --progress --colors",
-    "build": "webpack",
-    "prod": "NODE_ENV=production webpack -p",
+    "start": "webpack-dev-server --config config/webpack.js --port 3000 --hot --inline --progress --colors",
+    "build": "webpack --config config/webpack.js",
+    "prod": "NODE_ENV=production webpack --config config/webpack.js -p",
     "predeploy": "npm run prod",
     "deploy": "surge --project ./build",
     "test": "echo \"Error: no test specified\" && exit 1"
