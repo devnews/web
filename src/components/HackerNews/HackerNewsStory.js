@@ -9,6 +9,7 @@ const HackerNewsStory = (props) => {
                 <a
                     href={props.story.url || 'https://news.ycombinator.com/item?id='+props.story.id}
                     target="_blank"
+                    rel="noopener noreferrer"
                 >
                     {props.story.title}
                 </a>

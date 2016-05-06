@@ -22,6 +22,7 @@ const GitHubRepo = (props) => {
                 <a
                     href={props.repo.url}
                     target="_blank"
+                    rel="noopener noreferrer"
                 >
                     {props.repo.user}/{props.repo.name}
                 </a>

@@ -9,6 +9,7 @@ const ProductHuntItem = (props) => {
                 <a
                     href={props.product.url}
                     target="_blank"
+                    rel="noopener noreferrer"
                 >
                     {props.product.name}
                 </a>
