@@ -1,0 +1,57 @@
+.common {
+    position: relative;
+    width: 100%;
+    height: 30px;
+    background-color: #ddd;
+    background-image: linear-gradient(to left, #ddd 0%, #e8e8e8 20%, #ddd 40%, #ddd 100%);
+    background-size: 400%;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: shimmer;
+    animation-timing-function: linear;
+}
+
+.smallPlaceholder {
+    margin: 15px 0;
+    max-width: 300px;
+}
+
+.largePlaceholder {
+    margin: 30px 0;
+    max-width: 400px;
+}
+
+.heading {
+    composes: common;
+}
+
+.footer {
+    composes: common;
+    display: inline-block;
+    margin-top: 15px;
+    &::before {
+        content: '';
+        position: absolute;
+        right: 30%;
+        width: 15px;
+        height: 38px;
+        background: var(--bodyBackground);
+    }
+}
+
+.smallFooter {
+    composes: footer;
+    &::before {
+        right: 50%;
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 100%;
+    }
+    100% {
+        background-position: 0;
+    }
+}

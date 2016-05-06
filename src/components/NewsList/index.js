@@ -1,6 +1,5 @@
 import React from 'react';
-import CircularProgress from 'material-ui/lib/circular-progress';
-import colors from '../../../config/colors.json';
+import PlaceholderShimmer from '../PlaceholderShimmer';
 import HackerNewsStory from '../HackerNews/HackerNewsStory';
 import GitHubRepo from '../GitHub/GitHubRepo';
 import ProductHuntItem from '../ProductHunt/ProductHuntItem';
@@ -26,11 +25,16 @@ class NewsList extends React.Component {
     }
 
     render () {
+        // Only show placeholder shimmer for first tab
+        if (!this.state.loaded && this.props.source === 'HackerNews') {
+            return (
+                <PlaceholderShimmer />
+            )
+        }
+
         if (!this.state.loaded) {
             return (
-                <div style={{margin: "45px"}}>
-                    <CircularProgress color={colors.brandPrimary} />
-                </div>
+                <div style={{margin: '30px 0'}}>Loading...</div>
             )
         }
 
