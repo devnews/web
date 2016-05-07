@@ -25,16 +25,9 @@ class NewsList extends React.Component {
     }
 
     render () {
-        // Only show placeholder shimmer for first tab
-        if (!this.state.loaded && this.props.source === 'HackerNews') {
-            return (
-                <PlaceholderShimmer />
-            )
-        }
-
         if (!this.state.loaded) {
             return (
-                <div style={{margin: '30px 0'}}>Loading...</div>
+                <PlaceholderShimmer />
             )
         }
 
