@@ -1,7 +1,7 @@
 import React from 'react';
-import Popover from 'material-ui/lib/popover/popover';
-import IconButton from 'material-ui/lib/icon-button';
-import InfoOutlineIcon from 'material-ui/lib/svg-icons/action/info-outline';
+import Popover from 'material-ui/Popover';
+import IconButton from 'material-ui/IconButton';
+import InfoOutlineIcon from 'material-ui/svg-icons/action/info-outline';
 import Logo from '../Logo';
 import styles from './index.css';
 

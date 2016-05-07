@@ -1,8 +1,7 @@
 import React from 'react';
 import request from 'superagent';
 import requestCache from 'superagent-cache';
-import Tabs from 'material-ui/lib/tabs/tabs';
-import Tab from 'material-ui/lib/tabs/tab';
+import {Tabs, Tab} from 'material-ui/Tabs';
 import HackerNewsIcon from '../Icons/HackerNews';
 import GitHubIcon from '../Icons/GitHub';
 import ProductHuntIcon from '../Icons/ProductHunt';
