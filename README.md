@@ -1,23 +1,20 @@
+[![devnews](https://devne.ws/logo.svg)](https://devne.ws/)
+
+[![StackShare](http://img.shields.io/badge/tech-stack-0690fa.svg?style=flat)](http://stackshare.io/sunnysingh/devnews)
+
 ## About
 
 [Devnews](https://devne.ws/) aggregates top news stories from Hacker News, trending repositories from GitHub, and top tech from Product Hunt.
 
-## Tech Stack
+## Roadmap
 
-Built with these awesome services and tools.
-
-- [Surge](https://surge.sh/)
-- [WrapAPI](https://wrapapi.com/)
-- [React](https://facebook.github.io/react/)
-- [Webpack](http://webpack.github.io/) and [Babel](https://babeljs.io/)
-- [PostCSS](http://postcss.org/) and [cssnext](http://cssnext.io/)
-- [Material-UI](http://www.material-ui.com/)
+The [open issues](https://github.com/devnews/web/issues) are good indications of what I have planned.
 
 ## Contributing
 
-This is a small project so I don't have any style guide or linters setup. If you do decide to contribute, I greatly appreciate if you make your code as similar to the current code as possible.
+Please stay consistent with the code.
 
-1. Clone this repository.
-2. Run `npm install` to install dependencies.
-3. Run `npm start` to start webpack-dev-server.
+1. Clone this repository (`devnews/web`).
+2. Run `npm install`.
+3. Run `npm start`.
 4. Submit a pull request.
