@@ -1,4 +1,4 @@
-## Logos
+## Logo
 
 If you're linking to devnews somewhere, we'd love to hear about it! You can tweet [@getdevnews](https://twitter.com/getdevnews) or [@ninjalitydesign](https://twitter.com/ninjality.com).
 
