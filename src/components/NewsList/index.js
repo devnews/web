@@ -24,6 +24,10 @@ class NewsList extends React.Component {
         });
     }
 
+    shouldComponentUpdate (nextProps, nextState) {
+      return nextState.loaded === true;
+    }
+
     render () {
         if (!this.state.loaded) {
             return (
