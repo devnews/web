@@ -4,8 +4,8 @@ If you're linking to devnews somewhere, we'd love to hear about it! You can twee
 
 The logo is available in [SVG](https://devne.ws/logo.svg) and [PNG](https://devne.ws/logo.png) formats:
 
-![logo.svg](https://devne.ws/logo.svg)
+[![logo.svg](https://devne.ws/logo.svg)](https://devne.ws/logo.svg)
 
 The icon is available in [SVG](https://devne.ws/icon.svg) and [PNG](https://devne.ws/icon.png) formats:
 
-![icon.svg](https://devne.ws/icon.svg)
+[![icon.svg](https://devne.ws/icon.svg)](https://devne.ws/icon.svg)
