@@ -17,68 +17,126 @@ requestCache(request, {
     defaultExpiration: 3600, // 1 hour
 });
 
-// Pass SuperAgent instance
-HackerNewsData.config({request: request});
-GitHubData.config({request: request});
-ProductHuntData.config({request: request});
+class News extends React.Component {
 
-const News = (props) => {
-    return (
-        <Tabs
-            className={styles.tabsContainer}
-            contentContainerClassName={styles.content}
-        >
+    constructor () {
+        super();
 
-            <Tab icon={<HackerNewsIcon title="Hacker News" />}>
-                <h1 className={styles.heading}>
-                    Hacker News
-                </h1>
+        this.state = {
+            hackernews: {
+                data: [],
+                loaded: false,
+            },
+            github: {
+                data: [],
+                loaded: false,
+            },
+            producthunt: {
+                data: [],
+                loaded: false,
+            },
+        };
+    }
 
-                <NewsList
-                    source="HackerNews"
-                    getItems={HackerNewsData.getItems}
-                    className={styles.storiesContainer}
-                />
+    getData () {
+        HackerNewsData
+            .config({request})
+            .get((data) => {
+                this.setState({
+                    hackernews: {
+                        data: data,
+                        loaded: true,
+                    },
+                });
+            });
 
-                <a href="https://news.ycombinator.com/news?p=2">
-                    Go to Hacker News (page 2)
-                </a>
-            </Tab>
+        GitHubData
+            .config({request})
+            .get((data) => {
+                this.setState({
+                    github: {
+                        data: data,
+                        loaded: true,
+                    },
+                });
+            });
 
-            <Tab icon={<GitHubIcon title="GitHub Trending" />}>
-                <h1 className={styles.heading}>
-                    GitHub Trending
-                </h1>
+        ProductHuntData
+            .config({request})
+            .get((data) => {
+                this.setState({
+                    producthunt: {
+                        data: data,
+                        loaded: true,
+                    },
+                });
+            });
+    }
 
-                <NewsList
-                    source="GitHub"
-                    getItems={GitHubData.getItems}
-                    className={styles.storiesContainer}
-                />
+    render () {
+        return (
+            <Tabs
+                className={styles.tabsContainer}
+                contentContainerClassName={styles.content}
+            >
 
-                <a href="https://github.com/trending">
-                    Go to GitHub Trending
-                </a>
-            </Tab>
+                <Tab icon={<HackerNewsIcon title="Hacker News" />}>
+                    <h1 className={styles.heading}>
+                        Hacker News
+                    </h1>
 
-            <Tab icon={<ProductHuntIcon title="Product Hunt Tech" />}>
-                <h1 className={styles.heading}>
-                    Product Hunt Tech
-                </h1>
+                    <NewsList
+                        source="hackernews"
+                        getData={this.getData.bind(this)}
+                        data={this.state.hackernews.data}
+                        loaded={this.state.hackernews.loaded}
+                        className={styles.storiesContainer}
+                    />
 
-                <NewsList
-                    source="ProductHunt"
-                    getItems={ProductHuntData.getItems}
-                    className={styles.storiesContainer}
-                />
+                    <a href="https://news.ycombinator.com/news?p=2">
+                        Go to Hacker News (page 2)
+                    </a>
+                </Tab>
 
-                <a href="https://www.producthunt.com/tech">
-                    Go to Product Hunt Tech
-                </a>
-            </Tab>
+                <Tab icon={<GitHubIcon title="GitHub Trending" />}>
+                    <h1 className={styles.heading}>
+                        GitHub Trending
+                    </h1>
 
-        </Tabs>
-    )
+                    <NewsList
+                        source="github"
+                        getData={this.getData.bind(this)}
+                        data={this.state.github.data}
+                        loaded={this.state.github.loaded}
+                        className={styles.storiesContainer}
+                    />
+
+                    <a href="https://github.com/trending">
+                        Go to GitHub Trending
+                    </a>
+                </Tab>
+
+                <Tab icon={<ProductHuntIcon title="Product Hunt Tech" />}>
+                    <h1 className={styles.heading}>
+                        Product Hunt Tech
+                    </h1>
+
+                    <NewsList
+                        source="producthunt"
+                        getData={this.getData.bind(this)}
+                        data={this.state.producthunt.data}
+                        loaded={this.state.producthunt.loaded}
+                        className={styles.storiesContainer}
+                    />
+
+                    <a href="https://www.producthunt.com/tech">
+                        Go to Product Hunt Tech
+                    </a>
+                </Tab>
+
+            </Tabs>
+        )
+    }
 };
 
 export default News;

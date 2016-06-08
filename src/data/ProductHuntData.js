@@ -4,9 +4,10 @@ ProductHuntData.request = null;
 
 ProductHuntData.config = (config) => {
     ProductHuntData.request = config.request;
+    return ProductHuntData;
 };
 
-ProductHuntData.getItems = (callback) => {
+ProductHuntData.get = (callback) => {
     const baseUrl = 'https://wrapapi.com/use/sunnysingh/producthunt/todaytech/0.0.2?wrapAPIKey=vZpCx0QXD65gAcUD4Q7gAL6y0GQB1pgT';
 
     ProductHuntData.request

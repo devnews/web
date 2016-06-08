@@ -4,9 +4,10 @@ GitHubData.request = null;
 
 GitHubData.config = (config) => {
     GitHubData.request = config.request;
+    return GitHubData;
 };
 
-GitHubData.getItems = (callback) => {
+GitHubData.get = (callback) => {
     const baseUrl = 'https://wrapapi.com/use/sunnysingh/github/trending/0.0.3?wrapAPIKey=vZpCx0QXD65gAcUD4Q7gAL6y0GQB1pgT';
 
     GitHubData.request

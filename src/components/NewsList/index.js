@@ -15,27 +15,22 @@ class NewsList extends React.Component {
         };
     }
 
-    componentDidMount () {
-        this.props.getItems((data) => {
-            this.setState({
-                data: data,
-                loaded: true,
-            });
-        });
+    componentWillMount () {
+        this.props.getData();
     }
 
     shouldComponentUpdate (nextProps, nextState) {
-      return nextState.loaded === true;
+      return this.props.loaded !== nextProps.loaded;
     }
 
     render () {
-        if (!this.state.loaded) {
+        if (!this.props.loaded) {
             return (
                 <PlaceholderShimmer />
             )
         }
 
-        if (!this.state.data.length) {
+        if (!this.props.data.length) {
             return (
                 <div>Oops, we were unable to load the stories :(</div>
             )
@@ -44,8 +39,8 @@ class NewsList extends React.Component {
         return (
             <div className={this.props.className}>
                 {
-                    this.state.data.map(item => {
-                        if (this.props.source == 'HackerNews') {
+                    this.props.data.map(item => {
+                        if (this.props.source == 'hackernews') {
                             return (
                                 <HackerNewsStory
                                     key={item.id}
@@ -53,7 +48,7 @@ class NewsList extends React.Component {
                                 />
                             )
                         }
-                        if (this.props.source == 'GitHub') {
+                        if (this.props.source == 'github') {
                             return (
                                 <GitHubRepo
                                     key={item.url}
@@ -61,7 +56,7 @@ class NewsList extends React.Component {
                                 />
                             )
                         }
-                        if (this.props.source == 'ProductHunt') {
+                        if (this.props.source == 'producthunt') {
                             return (
                                 <ProductHuntItem
                                     key={item.id}
@@ -79,7 +74,9 @@ class NewsList extends React.Component {
 
 NewsList.propsTypes = {
     source: React.PropTypes.string.isRequired,
-    getItems: React.PropTypes.object.isRequired,
+    getData: React.PropTypes.object.isRequired,
+    data: React.PropTypes.object.isRequired,
+    loaded: React.PropTypes.bool.isRequired,
 };
 
 export default NewsList;

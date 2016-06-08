@@ -6,9 +6,10 @@ HackerNewsData.request = null;
 
 HackerNewsData.config = (config) => {
     HackerNewsData.request = config.request;
+    return HackerNewsData;
 };
 
-HackerNewsData.getItems = (callback) => {
+HackerNewsData.get = (callback) => {
 
     const baseUrl = 'https://hacker-news.firebaseio.com/v0';
 
