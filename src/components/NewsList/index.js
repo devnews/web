@@ -15,7 +15,7 @@ class NewsList extends React.Component {
         };
     }
 
-    componentWillMount () {
+    componentDidMount () {
         this.props.getData();
     }
 
