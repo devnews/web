@@ -1,21 +1,9 @@
 import React from 'react';
-import request from 'superagent';
-import requestCache from 'superagent-cache';
 import {Tabs, Tab} from 'material-ui/Tabs';
-import HackerNewsIcon from '../Icons/HackerNews';
-import GitHubIcon from '../Icons/GitHub';
-import ProductHuntIcon from '../Icons/ProductHunt';
+import {HackerNewsIcon, GitHubIcon, ProductHuntIcon} from '../Icons';
+import {hackernews, github, producthunt} from '../../data';
 import NewsList from '../NewsList';
-import HackerNewsData from '../../data/HackerNewsData';
-import GitHubData from '../../data/GitHubData';
-import ProductHuntData from '../../data/ProductHuntData';
 import styles from './index.css';
-
-// Cache Ajax requests
-requestCache(request, {
-    storage: 'local', // localStorage
-    defaultExpiration: 3600, // 1 hour
-});
 
 class News extends React.Component {
 
@@ -38,39 +26,44 @@ class News extends React.Component {
         };
     }
 
-    getData () {
-        HackerNewsData
-            .config({request})
-            .get((data) => {
-                this.setState({
-                    hackernews: {
-                        data: data,
-                        loaded: true,
-                    },
-                });
+    componentDidMount () {
+        hackernews((data) => {
+            this.setState({
+                hackernews: {
+                    data: data,
+                    loaded: true,
+                },
             });
+        });
+    }
 
-        GitHubData
-            .config({request})
-            .get((data) => {
-                this.setState({
-                    github: {
-                        data: data,
-                        loaded: true,
-                    },
-                });
-            });
-
-        ProductHuntData
-            .config({request})
-            .get((data) => {
-                this.setState({
-                    producthunt: {
-                        data: data,
-                        loaded: true,
-                    },
-                });
-            });
+    handleActiveTab (tab) {
+        switch (tab.props.value) {
+            case 'github':
+                if (!this.state.github.loaded) {
+                    github((data) => {
+                        this.setState({
+                            github: {
+                                data: data,
+                                loaded: true,
+                            },
+                        });
+                    });
+                }
+            break;
+            case 'producthunt':
+                if (!this.state.producthunt.loaded) {
+                    producthunt((data) => {
+                        this.setState({
+                            producthunt: {
+                                data: data,
+                                loaded: true,
+                            },
+                        });
+                    });
+                }
+            break;
+        }
     }
 
     render () {
@@ -87,7 +80,6 @@ class News extends React.Component {
 
                     <NewsList
                         source="hackernews"
-                        getData={this.getData.bind(this)}
                         data={this.state.hackernews.data}
                         loaded={this.state.hackernews.loaded}
                         className={styles.storiesContainer}
@@ -98,14 +90,17 @@ class News extends React.Component {
                     </a>
                 </Tab>
 
-                <Tab icon={<GitHubIcon title="GitHub Trending" />}>
+                <Tab
+                    icon={<GitHubIcon title="GitHub Trending" />}
+                    value="github"
+                    onActive={this.handleActiveTab.bind(this)}
+                >
                     <h1 className={styles.heading}>
                         GitHub Trending
                     </h1>
 
                     <NewsList
                         source="github"
-                        getData={this.getData.bind(this)}
                         data={this.state.github.data}
                         loaded={this.state.github.loaded}
                         className={styles.storiesContainer}
@@ -116,14 +111,17 @@ class News extends React.Component {
                     </a>
                 </Tab>
 
-                <Tab icon={<ProductHuntIcon title="Product Hunt Tech" />}>
+                <Tab
+                    icon={<ProductHuntIcon title="Product Hunt Tech" />}
+                    value="producthunt"
+                    onActive={this.handleActiveTab.bind(this)}
+                >
                     <h1 className={styles.heading}>
                         Product Hunt Tech
                     </h1>
 
                     <NewsList
                         source="producthunt"
-                        getData={this.getData.bind(this)}
                         data={this.state.producthunt.data}
                         loaded={this.state.producthunt.loaded}
                         className={styles.storiesContainer}

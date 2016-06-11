@@ -6,20 +6,7 @@ import ProductHuntItem from '../ProductHunt/ProductHuntItem';
 
 class NewsList extends React.Component {
 
-    constructor () {
-        super();
-
-        this.state = {
-            data: [],
-            loaded: false,
-        };
-    }
-
-    componentDidMount () {
-        this.props.getData();
-    }
-
-    shouldComponentUpdate (nextProps, nextState) {
+    shouldComponentUpdate (nextProps) {
       return this.props.loaded !== nextProps.loaded;
     }
 
