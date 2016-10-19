@@ -14,7 +14,7 @@ The [open issues](https://github.com/devnews/web/issues) are good indications of
 
 ## Contributing
 
-Please stay consistent with the code.
+Please stay consistent with the code. 
 
 1. Clone this repository (`devnews/web`).
 2. Run `npm install`.
