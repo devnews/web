@@ -60,7 +60,7 @@ export const hackernews = (callback) => {
 
 export const github = (callback) => {
 
-    const baseUrl = 'https://wrapapi.com/use/sunnysingh/github/trending/0.0.3?wrapAPIKey='+wrapApiKey;
+    const baseUrl = 'https://wrapapi.com/use/sunnysingh/github/trending/0.0.4?wrapAPIKey='+wrapApiKey;
 
     localforage.getItem('github').then((cache) => {
         if (cache) {
