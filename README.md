@@ -10,7 +10,9 @@
 
 ## Roadmap
 
-The [open issues](https://github.com/devnews/web/issues) are good indications of what I have planned.
+The [open issues](https://github.com/devnews/web/issues) are good indications of what we have planned.
+
+Also make sure you check out the [v2 milestone](https://github.com/devnews/web/milestone/1).
 
 ## Contributing
 
