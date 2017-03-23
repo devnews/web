@@ -99,7 +99,7 @@ export const github = (callback) => {
 
 export const producthunt = (callback) => {
 
-    const baseUrl = 'https://wrapapi.com/use/sunnysingh/producthunt/todaytech/0.0.2?wrapAPIKey='+wrapApiKey;
+    const baseUrl = 'https://wrapapi.com/use/sunnysingh/producthunt/todaytech/0.0.3?wrapAPIKey='+wrapApiKey;
 
     localforage.getItem('producthunt').then((cache) => {
         if (cache) {
@@ -119,10 +119,10 @@ export const producthunt = (callback) => {
                         id: product.id,
                         name: product.name,
                         tagline: product.tagline,
-                        url: 'https://www.producthunt.com'+product.shortened_url,
-                        votesCount: product.vote_count,
-                        commentsCount: product.comment_count,
-                        discussionUrl: 'https://www.producthunt.com'+product.url,
+                        url: product.redirect_url,
+                        votesCount: product.votes_count,
+                        commentsCount: product.comments_count,
+                        discussionUrl: product.discussion_url,
                     });
                 }
 
