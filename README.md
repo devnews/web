@@ -16,7 +16,7 @@ Also make sure you check out the [v2 milestone](https://github.com/devnews/web/m
 
 ## Contributing
 
-Please stay consistent with the code.
+Please stay consistent with the code. 
 
 1. Clone this repository (`devnews/web`).
 2. Run `npm install`.
