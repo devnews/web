@@ -54,7 +54,7 @@ const config = {
                 loader: 'babel',
                 exclude: [/node_modules/, /.ejs$/],
                 query: {
-                    presets: DEV_ENV ? ['es2015', 'react', 'react-hmre'] : ['es2015', 'react'],
+                    presets: DEV_ENV ? ['env', 'react', 'react-hmre'] : ['env', 'react'],
                 },
             },
             {

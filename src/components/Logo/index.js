@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import SVGInline from 'react-svg-inline';
 import svg from '../../static/logo.svg';
 
@@ -15,9 +16,9 @@ const Logo = (props) => {
 };
 
 Logo.propTypes = {
-    desc:   React.PropTypes.string,
-    width:  React.PropTypes.string,
-    height: React.PropTypes.string,
+    desc:   PropTypes.string,
+    width:  PropTypes.string,
+    height: PropTypes.string,
 };
 
 Logo.defaultProps = {

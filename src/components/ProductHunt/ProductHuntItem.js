@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from '../NewsList/index.css';
 
 const ProductHuntItem = (props) => {
@@ -35,7 +36,7 @@ const ProductHuntItem = (props) => {
 };
 
 ProductHuntItem.propTypes = {
-    product: React.PropTypes.object.isRequired,
+    product: PropTypes.object.isRequired,
 };
 
 export default ProductHuntItem;
