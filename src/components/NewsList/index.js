@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import PlaceholderShimmer from '../PlaceholderShimmer';
 import HackerNewsStory from '../HackerNews/HackerNewsStory';
 import GitHubRepo from '../GitHub/GitHubRepo';
@@ -60,10 +61,10 @@ class NewsList extends React.Component {
 };
 
 NewsList.propsTypes = {
-    source: React.PropTypes.string.isRequired,
-    getData: React.PropTypes.object.isRequired,
-    data: React.PropTypes.object.isRequired,
-    loaded: React.PropTypes.bool.isRequired,
+    source: PropTypes.string.isRequired,
+    getData: PropTypes.object.isRequired,
+    data: PropTypes.object.isRequired,
+    loaded: PropTypes.bool.isRequired,
 };
 
 export default NewsList;

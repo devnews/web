@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Autolinker from 'autolinker';
 import escape from 'html-escape';
 import styles from '../NewsList/index.css';
@@ -52,7 +53,7 @@ const GitHubRepo = (props) => {
 };
 
 GitHubRepo.propTypes = {
-    repo: React.PropTypes.object.isRequired,
+    repo: PropTypes.object.isRequired,
 };
 
 export default GitHubRepo;

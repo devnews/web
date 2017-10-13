@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from '../NewsList/index.css';
 
 const HackerNewsStory = (props) => {
@@ -37,7 +38,7 @@ const HackerNewsStory = (props) => {
 };
 
 HackerNewsStory.propTypes = {
-    story: React.PropTypes.object.isRequired,
+    story: PropTypes.object.isRequired,
 };
 
 export default HackerNewsStory;

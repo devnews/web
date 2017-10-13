@@ -27,9 +27,3 @@ a:not([type="button"]) {
         transition: all .2s ease;
     }
 }
-
-.back2top {
-    position: fixed !important;
-    bottom: 15px;
-    right: 15px;
-}
