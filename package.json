@@ -25,6 +25,7 @@
     "autolinker": "^1.4.4",
     "babel-preset-react-hmre": "^1.1.1",
     "html-escape": "^2.0.0",
+    "load-script": "^1.0.0",
     "localforage": "^1.5.2",
     "material-ui": "^0.19.4",
     "moment": "^2.19.1",
