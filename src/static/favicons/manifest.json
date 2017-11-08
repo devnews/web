@@ -37,5 +37,6 @@
 			"type": "image\/png",
 			"density": 4
 		}
-	]
+	],
+	"display": "standalone"
 }
