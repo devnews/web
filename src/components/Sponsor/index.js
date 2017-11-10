@@ -5,7 +5,7 @@ class Sponsor extends React.Component {
 
   componentDidMount() {
     if (!window.codesponsorLoaded) {
-      loadScript('https://app.codesponsor.io/scripts/3ptFyr9SDJmFhdjoBxV8fQ?theme=light&image=hide&width=400&height=115', (error) => {
+      loadScript('https://app.codesponsor.io/scripts/IQnppckqRltebNM5FH2qZg?theme=light&image=hide&width=400&height=115', (error) => {
         if (!error) window.codesponsorLoaded = true;
       });
     }
