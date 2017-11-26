@@ -1,9 +1,5 @@
 [![devnews](https://devne.ws/logo.svg)](https://devne.ws/)
 
-<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/wQPFrJcpEE8Ur3UBbfFJbqza/devnews/web'>
-  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/wQPFrJcpEE8Ur3UBbfFJbqza/devnews/web.svg' />
-</a>
-
 [![StackShare](http://img.shields.io/badge/tech-stack-0690fa.svg?style=flat)](http://stackshare.io/sunnysingh/devnews)
 [![Travis](https://img.shields.io/travis/devnews/web.svg?maxAge=2592000)](https://travis-ci.org/devnews/web)
 [![David](https://img.shields.io/david/devnews/web.svg?maxAge=2592000)](https://david-dm.org/devnews/web)
