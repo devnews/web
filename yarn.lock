@@ -157,9 +157,12 @@ asynckit@^0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/asynckit/-/asynckit-0.4.0.tgz#c79ed97f7f34cb8f2ba1bc9790bcc366474b4b79"
 
-autolinker@^1.4.4:
-  version "1.4.4"
-  resolved "https://registry.yarnpkg.com/autolinker/-/autolinker-1.4.4.tgz#84aaaa9bb07c794f0855cd7041a31eec6f6fa8ca"
+autolinker@^3.14.0:
+  version "3.14.1"
+  resolved "https://registry.yarnpkg.com/autolinker/-/autolinker-3.14.1.tgz#6ae4b812b6eaf42d4d68138b9e67757cbf2bc1e4"
+  integrity sha512-yvsRHIaY51EYDml6MGlbqyJGfl4n7zezGYf+R7gvM8c5LNpRGc4SISkvgAswSS8SWxk/OrGCylKV9mJyVstz7w==
+  dependencies:
+    tslib "^1.9.3"
 
 autoprefixer@^6.0.2, autoprefixer@^6.3.1:
   version "6.5.3"
@@ -4924,6 +4927,11 @@ traceur@0.0.105:
     rsvp "^3.0.13"
     semver "^4.3.3"
     source-map-support "~0.2.8"
+
+tslib@^1.9.3:
+  version "1.11.1"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.11.1.tgz#eb15d128827fbee2841549e171f45ed338ac7e35"
+  integrity sha512-aZW88SY8kQbU7gpV19lN24LtXh/yD4ZZg6qieAJDDg+YBsJcSmLGK9QpnUjAKVG/xefmvJGd1WUmfpT/g6AJGA==
 
 tty-browserify@0.0.0:
   version "0.0.0"
