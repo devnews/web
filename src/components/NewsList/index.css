@@ -1,33 +1,42 @@
 .container {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.container:hover .buttons1 {
+  visibility: visible;
+}
+
+.buttons1 {
+  visibility: hidden;
 }
 
 .container a:visited {
-    color: #555;
+  color: #555;
 }
 
 .heading {
-    margin: 0;
-    line-height: 1.6em;
-    word-break: break-all;
-    word-break: break-word;
-    hyphens: auto;
+  margin: 0;
+  line-height: 1.6em;
+  word-break: break-all;
+  word-break: break-word;
+  hyphens: auto;
 }
 
 .description {
-    margin-top: 15px;
-    margin-bottom: 0;
-    word-break: break-all;
-    word-break: break-word;
-    hyphens: auto;
+  margin-top: 15px;
+  margin-bottom: 0;
+  word-break: break-all;
+  word-break: break-word;
+  hyphens: auto;
 }
 
 .footer {
-    padding-top: 15px;
-    line-height: 1.5em;
+  padding-top: 15px;
+  line-height: 1.5em;
 }
 
 .footerItem {
-    display: inline-block;
-    margin-right: 15px;
+  display: inline-block;
+  margin-right: 15px;
 }
